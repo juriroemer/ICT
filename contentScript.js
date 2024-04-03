@@ -12,7 +12,7 @@ function interceptData() {
       .clone()
       .json()
       .then((data) => { console.log("intercepted response data:", data)
-      url = decodeURI(args[0]).split(/=|&/)
+      url = decodeURIComponent(args[0]).split(/=|&/)
       parents = [url[1], url[3]]
       console.log(url)
       console.log(parents)
