@@ -23,4 +23,6 @@ This is a simple PoC Chrome Extension that logs your crafted items and their rec
   - [ ] json
   - [ ] (csv)
 
+- [ ] add word timers
+
 - [ ] (port to Firefox)

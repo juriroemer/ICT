@@ -15,14 +15,18 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
   old = localStorage.getItem("tree");
   console.log(old);
+
   if (old === null) {
     updated = [request.newData];
     console.log(updated);
     updated = JSON.stringify(updated);
+    old = [];
   } else {
     old = JSON.parse(old);
     updated = [...old, request.newData];
     updated = JSON.stringify(updated);
   }
-  localStorage.setItem("tree", updated);
+  if (!old.includes(request.newData)) {
+    localStorage.setItem("tree", updated);
+  }
 });
