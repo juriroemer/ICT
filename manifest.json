@@ -1,0 +1,27 @@
+{
+  "description": "TIC - Logs all your crafting recipes and materials for you!",
+  "manifest_version": 2,
+  "name": "Tooling for Infinite Craft",
+  "version": "0.01",
+
+  "permissions": ["webRequest", "<all_urls>"],
+
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://neal.fun/infinite-craft*"],
+      "js": ["contentScript.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "externally_connectable": {
+    "matches": ["https://neal.fun/infinite-craft*"]
+  }
+}
